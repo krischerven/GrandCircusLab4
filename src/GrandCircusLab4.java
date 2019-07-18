@@ -20,8 +20,8 @@ public class GrandCircusLab4 {
 			for (long i = 1; i <= num; ++i) {
 				long i1 = String.valueOf(i).length();
 				long i2 = String.valueOf(i*i).length();
-				String s1 = " ".repeat((int) (Math.max(7,i1+1)-i1));
-				String s2 = " ".repeat((int) (Math.max(7,i2+1)-i2));
+				String s1 = repeat(" ", (int) (Math.max(7,i1+1)-i1));
+				String s2 = repeat(" ", (int) (Math.max(7,i2+1)-i2));
 				System.out.printf("%d%s%d%s%d%n", i, s1, (i*i), s2, (i*i*i));
 			}
 			System.out.println("Continue (y/n)");
@@ -29,5 +29,13 @@ public class GrandCircusLab4 {
 		} while (cont.equals("y") || cont.equals("yes"));
 		System.out.println("Goodbye.");
 		s.close();
+	}
+	
+	public static String repeat(String str, int times) {
+		String ret = "";
+		for (int i = 0; i < times; ++i) {
+			ret += str;
+		}
+		return ret;
 	}
 }
